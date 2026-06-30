@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__mcp-registry__suggest_connectors",
+      "mcp__mcp-registry__search_mcp_registry",
+      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\\\\spec-kit-radar-ecommerce-main\" status)",
+      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\" status)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\\\\spec-kit-radar-ecommerce-main\" diff --stat)"
+    ]
+  }
+}
