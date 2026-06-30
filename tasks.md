@@ -68,6 +68,11 @@
 
 ---
 
+## Baseline (fora do escopo de tarefas dos épicos)
+
+Os requisitos **FR-064 a FR-116** descrevem comportamento **pré-existente em produção** (acesso/login, ofertas, gateway/antifraude, histórico de pedidos e complementos de homepage, troca de loja, PIX e tokenização). Não correspondem a tickets ECA destes épicos; estão na `spec.md` para completar a documentação do produto. Caso sejam revisados no futuro, gerar tarefas específicas aqui.
+
 ## Pendências
 
 - **T035 (ECA-665)** em testes — concluir validação e marcar FR-063 como verificado na `spec.md`.
+- **Migração de gateway** (Cielo → Braspag) — confirmar lojas migradas (FR-109..112).

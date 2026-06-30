@@ -4,20 +4,22 @@
 |---|---|
 | **Feature** | `001-app-ecommerce` |
 | **Projeto (Jira)** | SQ — ECOMMERCE APP |
-| **Status** | Entregue (33 itens finalizados, 1 em testes) |
-| **Tipo** | Especificação consolidada (retrospectiva dos épicos 1–5) |
-| **Versão** | 1.0 |
+| **Status** | Em produção (baseline) + épicos 1–5 (1 item em testes) |
+| **Tipo** | Especificação consolidada do produto (baseline + épicos recentes) |
+| **Versão** | 2.0 |
 | **Atualizado** | 2026-06 |
 
-> Esta spec consolida o comportamento entregue ao longo de cinco épicos. Descreve **o quê** e **o porquê** do produto (não o **como** de implementação, que vive em `plan.md`). Requisitos funcionais usam IDs `FR-###` com rastreabilidade aos tickets `ECA-###`.
+> Esta spec consolida o comportamento do produto: o **baseline** (regras pré-existentes, documentadas nos handoffs/PDFs) e os **épicos recentes** (jan/2026 →, registrados nos tickets `ECA-###`). Descreve **o quê** e **o porquê** (o **como** vive em `plan.md`).
+>
+> **Legenda de origem dos requisitos:** *(ECA-###)* = entregue nos épicos recentes · *(baseline: Documento)* = comportamento pré-existente. Onde baseline e épicos conflitam, **prevalece a regra atual (ECA)**, e a anterior é sinalizada como substituída em notas de conflito.
 
 ---
 
 ## 1. Resumo
 
-O aplicativo permite que o consumidor encontre uma farmácia próxima, navegue pelo catálogo, monte um carrinho e finalize a compra com retirada na loja ou entrega em casa, pagando na entrega/retirada ou no app (PIX e cartão). O escopo desta spec cobre cinco frentes: venda de medicamentos controlados, onboarding e homepage, notificações de pedido, gestão de endereços e o novo checkout.
+O aplicativo permite que o consumidor acesse (login/cadastro), encontre uma farmácia próxima, navegue pelo catálogo e pelas ofertas, monte um carrinho e finalize a compra com retirada na loja ou entrega em casa, pagando na entrega/retirada ou no app (PIX e cartão), acompanhando o histórico e o status dos pedidos. Esta spec cobre o produto completo: o acesso, o onboarding e a homepage, as ofertas, o catálogo (incluindo medicamentos controlados), os endereços, o checkout (carrinho, entrega/retirada, troca de loja e pagamento), o gateway de pagamento e antifraude, as notificações e o histórico de pedidos.
 
-As configurações de loja (catálogo, ofertas, fretes, horários, formas de pagamento) são definidas pelo associado no **Portal Radar E-commerce** e consumidas pelo app em tempo de execução.
+As configurações de loja (catálogo, ofertas, fretes, horários, formas de pagamento, antifraude) são definidas pelo associado no **Portal Radar E-commerce / E-Delivery** e consumidas pelo app em tempo de execução.
 
 ## 2. Objetivos e não-objetivos
 
@@ -41,7 +43,9 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 | Limitador de oferta | Quantidade máxima de unidades que um cliente pode comprar de um produto no preço de oferta. |
 | Frete grátis | Valor mínimo de subtotal, por loja, a partir do qual o frete é gratuito. |
 | Tempo de retirada/entrega | Tempo configurado pela loja, somado ao horário atual, para calcular a disponibilidade. |
-| Gateway | Braspag/Cielo — tokenização/cofre de cartões e processamento de PIX e crédito. |
+| Gateway (atual) | Nova integração **Braspag**, apartada da integração E-Commerce **Cielo**, para pagamento online; tokenização/cofre de cartões e PIX. |
+| Antifraude | Análise de risco (Cybersource) acionada pela Braspag, na mesma chamada do gateway, para lojas que contratam o serviço. |
+| PEC | Base de clientes da rede onde os cadastros feitos pelo app são registrados. |
 
 ## 4. Cenários de usuário (principais)
 
@@ -54,6 +58,8 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 ---
 
 ## 5. Requisitos funcionais
+
+> Origem de cada requisito sinalizada ao final: *(ECA-###)* = épico recente · *(baseline: Documento)* = comportamento pré-existente.
 
 ### 5.1 Medicamentos controlados (Épico 1)
 
@@ -92,6 +98,21 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 | *Confirmar localização (PIN no mapa)* | *Digitar endereço (autocomplete)* | *Nova homepage / vitrines* |
 | <img src="./assets/onboarding-regiao-nao-atendida.jpg" width="220"> | | |
 | *Região não atendida — lojas para retirada* | | |
+
+#### Complementos — Homepage e seleção de loja (baseline)
+
+- **FR-064** O campo de busca DEVE permanecer fixo no scroll da home, abrir a tela de busca ao toque e estar visível apenas em lojas do módulo vendas. *(baseline: Homepage)*
+- **FR-065** O endereço do header DEVE seguir a prioridade: (1) localização compartilhada, (2) endereço cadastrado, (3) endereço do dispositivo; não havendo nenhum, fica vazio e DEVE ser preenchido na cesta antes de concluir a compra. *(baseline: Homepage)*
+- **FR-066** Ao lado do endereço, o app DEVE exibir o tempo de entrega (quando a loja entrega no raio do cliente) ou a mensagem "Fora do alcance"; o botão "três pontos" abre os detalhes da loja. *(baseline: Homepage)*
+- **FR-067** Os banners da home são configurados no Portal E-Delivery (o app apenas exibe a ordem definida pela rede/loja); o banner de CTA de ofertas abre a tela de ofertas; o banner de frete grátis (sem clique) aparece quando a loja tem regra de frete grátis. *(baseline: Homepage)*
+- **FR-068** Os departamentos DEVEM seguir a ordem: Cuidados pessoais, Higiene e beleza, Medicamentos, Farmacinha, Infantil, Nutrição e alimentos, Outros. *(baseline: Homepage)*
+- **FR-069** Os carrosséis da home DEVEM exibir até 10 produtos; "Ver mais" abre a vitrine completa; produtos sem estoque não são exibidos. *(baseline: Homepage)*
+- **FR-070** A permissão de localização nativa define o fluxo: "Permitir uma vez" ou "Durante o uso do app" NÃO passam pela tela de seleção de lojas; "Não permitir" passa pela seleção de lojas. *(baseline: Seleção de lojas)*
+- **FR-071** Havendo mais de uma loja que entrega no endereço, o desempate DEVE seguir: P1 mais próxima → P2 frete mais barato → P3 menor tempo de entrega; empate total nas três variáveis → escolha aleatória. *(baseline: Seleção de lojas)*
+- **FR-072** As regras de inativação de loja (em construção/indisponível) são mantidas; lojas indisponíveis ainda são rankeadas na listagem; sem resultado da API, exibir placeholder. *(baseline: Seleção de lojas)*
+
+> **Nota de conflito (vitrines):** o baseline previa vitrines adicionais ("Você já comprou" — compras dos últimos 60 dias; "Dermocosméticos"; "Higiene e beleza") e segmentação de público (4 segmentos, atualização manual trimestral pelo time de dados). A estrutura **vigente** segue o **FR-020 (ECA-58)** — Ofertas destaque → Ofertas pra você → Mais vendidos —, que substitui a lista anterior.
+> **Nota de conflito (roteamento):** o **FR-012 (ECA-35)** define a prioridade vigente de roteamento; o desempate detalhado do FR-071 aplica-se dentro do conjunto de lojas que entregam no endereço.
 
 ### 5.3 Notificações (Épico 3)
 
@@ -135,6 +156,13 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 | <img src="./assets/checkout-carrinho.jpg" width="220"> | <img src="./assets/checkout-carrinho-limite-oferta.jpg" width="220"> | <img src="./assets/checkout-carrinho-vazio.jpg" width="220"> |
 | *Carrinho — lista e subtotal* | *Limite de oferta (card dividido)* | *Carrinho vazio* |
 
+#### Complementos — Carrinho (baseline)
+
+- **FR-073** O componente de quantidade DEVE sempre exibir a quantidade atual: com 1 unidade, o botão à esquerda é o de excluir; com 2+ unidades, é o de subtrair. *(baseline: Cesta)*
+- **FR-074** A mensagem "Restam X unidades" DEVE aparecer no card sempre que o produto tiver a partir de 5 unidades em estoque. *(baseline: Cesta)*
+
+> **Nota de conflito (checkout):** o fluxo de cesta do baseline (tela única com "Você economizou", resumo e formas de pagamento antigas) foi **substituído** pelo novo checkout dos FR-031–FR-063 (Épico 5). As regras acima permanecem por descreverem comportamento de quantidade/estoque ainda vigente.
+
 ### 5.6 Checkout — Entrega e retirada (Épico 5)
 
 - **FR-043** A seção "Meu Endereço" DEVE usar o endereço atual do usuário (ver FR-017). *(ECA-309)*
@@ -153,6 +181,22 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 |:-:|:-:|:-:|
 | <img src="./assets/checkout-entrega-retirada.jpg" width="220"> | <img src="./assets/checkout-entrega-exige-receita.jpg" width="220"> | <img src="./assets/checkout-trocar-loja.jpg" width="220"> |
 | *Entrega/retirada* | *Exige receita (controlado)* | *Trocar loja para retirada* |
+
+#### Complementos — Troca de loja e distâncias (baseline)
+
+- **FR-075** Ao prosseguir para a entrega, o app DEVE exibir o modal de confirmação de endereço: manter o endereço → o app verifica se a loja entrega no local (sim: entrega + retirada; não: só retirada); alterar → tela de gestão de endereços. *(baseline: Troca de loja)*
+- **FR-076** Ao trocar de endereço na entrega: se a loja atual entrega no novo endereço, mantém a loja; senão, busca outra que entregue e escolhe pelo menor número de alterações na cesta (desempate: disponibilidade → quantidade de unidades); se nenhuma entrega, mantém a loja e marca a entrega como indisponível. *(baseline: Troca de loja)*
+- **FR-077** Na retirada, o app mantém a loja atual, exibe o card da loja e o botão "Escolher outra farmácia"; se a loja não faz retirada, exibe "Esta farmácia não efetua retiradas" e desabilita o pagamento. *(baseline: Troca de loja)*
+- **FR-078** Busca de farmácias para retirada: header fixo (endereço + busca); busca por endereço (CEP, cidade, bairro, logradouro — nunca por nome da loja); sugestões a partir do 4º caractere (até 5); histórico das últimas 5 buscas, com exclusão; "0 farmácias encontradas" quando nada corresponde. *(baseline: Troca de loja)*
+- **FR-079** Listagem de lojas para retirada: raio de 100 km; destaca a loja atual; mostra a contagem de farmácias disponíveis; carrega 6 lojas e +6 a cada scroll; lojas sem estoque de qualquer item da cesta não são listadas; endereço limitado a 35 caracteres. *(baseline: Troca de loja)*
+- **FR-080** Lojas com impacto na cesta exibem "Sua cesta irá sofrer alterações"; ao selecioná-las, o app mostra o modal de confirmação; sem impacto, segue direto para a entrega; a troca atualiza todas as configurações e o pagamento para a nova loja. *(baseline: Troca de loja)*
+- **FR-081** Ao trocar de loja, o app consulta as alterações (disponibilidade, preço, novas condições) e prioriza a mensagem por produto: estoque indisponível → alteração de quantidade → alteração de preço; ajusta automaticamente a quantidade ao estoque disponível; verifica oferta equivalente na nova loja. *(baseline: Troca de loja)*
+- **FR-082** Havendo alterações, o app exibe "Houve alterações na sua cesta"; "Ver alterações" abre o modal; "Manter alterações" segue na entrega; "Trocar endereço" leva à gestão de endereços. *(baseline: Troca de loja)*
+- **FR-083** O serviço default na tela de entrega é: entrega selecionada quando disponível; caso contrário, retirada selecionada; a label "Grátis" aparece sempre que o frete (entrega) ou a retirada forem gratuitos. *(baseline: Troca de loja)*
+- **FR-084** Formatação de distância: ≥ 1 km em quilômetros (número cheio = 1 casa decimal; quebrado = 2 casas, ex. "2.10km"); < 1 km em metros (até 999 m); < 1 m arredonda para "1m"; mesmo endereço da loja exibe "1m". *(baseline: Troca de loja)*
+- **FR-085** Tempo de retirada: exibido em todas as lojas listadas, refletindo o campo "Tempo de retirada" do Portal, sempre em minutos; < 10 min com um algarismo ("9 minutos", não "09"); valor zerado → "Disponível para retirada imediata". *(baseline: Troca de loja)*
+
+> **Relação com ECA-579:** o FR-050/FR-051 (design system) descrevem a versão atual da troca de loja; os FR-075–FR-085 detalham regras operacionais do baseline que seguem válidas (busca, paginação, distâncias, tempo de retirada).
 
 ### 5.7 Checkout — Pagamento (Épico 5)
 
@@ -178,6 +222,56 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 | <img src="./assets/checkout-pagamento-pix.jpg" width="220"> | <img src="./assets/checkout-cvv.jpg" width="220"> | <img src="./assets/checkout-pix-expirado.jpg" width="220"> |
 | *Pagamento via PIX (timer + copiar)* | *Confirmação por CVV* | *PIX expirado — gerar novo* |
 
+#### Complementos — PIX e tokenização (baseline)
+
+- **FR-086** Ao concluir a compra, o consumidor DEVE ser direcionado à tela de pagamento do pedido. *(baseline: PIX Online)*
+- **FR-087** Ao identificar o pagamento, o app DEVE exibir a mensagem de sucesso e direcionar o consumidor à tela de acompanhamento do pedido. *(baseline: PIX Online)*
+- **FR-088** Se o pagamento não ocorrer no prazo, o pedido DEVE ser cancelado e o consumidor direcionado ao acompanhamento com o status "Cancelado". *(baseline: PIX Online — refina o FR-061)*
+- **FR-089** O pedido só DEVE aparecer na fila do Portal após a validação do pagamento via PIX. *(baseline: PIX Online)*
+- **FR-090** Ao cancelar um pedido pago via PIX, o valor DEVE ser estornado automaticamente ao consumidor. *(baseline: PIX Online)*
+- **FR-091** O cartão salvo fica na carteira do consumidor, acessível pela tela de perfil e pela tela de pagamento da cesta. *(baseline: Tokenização)*
+- **FR-092** O campo "Apelido" do cartão é opcional (máx. 22 caracteres); se preenchido, passa a ser o nome do cartão na carteira. *(baseline: Tokenização)*
+- **FR-093** O dropdown de validade DEVE considerar o ano atual + 12 anos; ao salvar, o app verifica se o cartão é válido. *(baseline: Tokenização)*
+- **FR-094** Ao excluir um cartão, o token DEVE ser removido também no gateway. *(baseline: Tokenização)*
+
+> **Nota de migração:** a tokenização vem migrando da integração E-Commerce **Cielo** para o novo **gateway Braspag** (ver 5.10). Os FR-059/FR-060 referenciam o cofre do gateway de pagamento.
+
+### 5.8 Acesso — Login e cadastro (baseline)
+
+- **FR-095** O login DEVE aceitar e-mail ou CPF. *(baseline: Login e cadastro)*
+- **FR-096** "Criar minha conta" abre o cadastro; todos os campos são obrigatórios; o botão inicia desabilitado e habilita após o preenchimento completo + aceite dos termos. *(baseline: Login e cadastro)*
+- **FR-097** O campo nome aceita apenas letras (sem números). *(baseline: Login e cadastro)*
+- **FR-098** "Ler termos" exibe o PDF dos termos de uso. *(baseline: Login e cadastro)*
+- **FR-099** "Esqueci minha senha" inicia o reset via CPF; "Continuar" habilita apenas com CPF em formato válido. *(baseline: Login e cadastro)*
+- **FR-100** O reset envia um código de confirmação ao e-mail cadastrado; após o código, o usuário define a nova senha. *(baseline: Login e cadastro)*
+- **FR-101** A senha DEVE ter no mínimo: 8 caracteres, 1 letra maiúscula e 1 caractere especial. *(baseline: Login e cadastro)*
+- **FR-102** Se o CPF não estiver cadastrado ao iniciar o reset, o app DEVE direcionar para a criação de conta. *(baseline: Login e cadastro)*
+- **FR-103** Todo cadastro feito pelo app DEVE ser registrado na base de clientes do PEC da rede. *(baseline: Login e cadastro)*
+
+### 5.9 Ofertas (baseline)
+
+- **FR-104** Usuário deslogado: o card de ofertas incentiva o login ("Faça login para ter acesso às ofertas") e o clique leva ao login. *(baseline: Ofertas)*
+- **FR-105** Usuário logado: o card do topo informa o número de ofertas ativas; sem ofertas ativas, exibe "Ative ofertas e economize mais!". *(baseline: Ofertas)*
+- **FR-106** Ao visualizar as ofertas ativas, o app exibe a mensagem fixa "Ofertas válidas enquanto durarem os estoques. Descontos não cumulativos". *(baseline: Ofertas)*
+- **FR-107** A tela apresenta os carrosséis de ofertas e de ofertas destaque (até 10 produtos); "Ver mais" abre a vitrine completa. *(baseline: Ofertas)*
+- **FR-108** Ativação: "Ativar" ativa a oferta no CPF do cliente com mensagem de sucesso (erro → tela de erro); após ativar, oculta "Ativar", mostra a compra e exibe a label "Oferta ativada" e a duração da oferta no card. *(baseline: Ofertas; relacionado a ECA-59)*
+
+### 5.10 Gateway de pagamento e antifraude (baseline)
+
+- **FR-109** O app DEVE integrar a um novo gateway de pagamento (Braspag), apartado da integração E-Commerce (Cielo) de pagamento online. *(baseline: Gateway)*
+- **FR-110** As chaves do gateway (MerchantID/MerchantKey) são distintas das da API E-Commerce; lojas com pagamento online que contratarem o gateway reconfiguram com as novas credenciais. *(baseline: Gateway)*
+- **FR-111** O antifraude (Cybersource) integra pela mesma API do gateway, em chamada única (a Braspag faz a ponte), para lojas que contratarem o serviço. *(baseline: Gateway)*
+- **FR-112** O gateway pode ser contratado sem antifraude; o antifraude exige o gateway; o funcionamento depende da configuração dos meios de pagamento no portal da Braspag. *(baseline: Gateway)*
+
+> **⚠️ Segurança:** as credenciais de homologação (MerchantID, MerchantKey, ClientId, ClientSecret), os IDs do Cybersource e as regras de teste (sobrenomes accept/review/reject) constam nos handoffs do parceiro e **não devem ser versionadas neste repositório** — mantê-las em gerenciador de segredos / variáveis de ambiente.
+
+### 5.11 Histórico de pedidos (baseline)
+
+- **FR-113** "Pedidos em andamento" lista pedidos nos status Fila, Em separação e Liberado; o contador de etapas preenche 1, 2 ou 3 marcadores conforme o status. *(baseline: Histórico de pedidos)*
+- **FR-114** "Detalhes" leva à tela de acompanhamento do pedido. *(baseline: Histórico de pedidos)*
+- **FR-115** "Pedidos concluídos" lista pedidos concluídos e cancelados; o título do card é o nome do primeiro produto inserido na cesta. *(baseline: Histórico de pedidos)*
+- **FR-116** As duas seções são ordenadas por data de criação, do mais recente para o mais antigo. *(baseline: Histórico de pedidos)*
+
 ---
 
 ## 6. Entidades principais
@@ -185,21 +279,30 @@ As configurações de loja (catálogo, ofertas, fretes, horários, formas de pag
 | Entidade | Atributos relevantes |
 |---|---|
 | Consumidor | id, endereços[], endereço selecionado, carteira (cartões) |
+| Conta de usuário | nome, CPF, e-mail, senha (mín. 8 / 1 maiúscula / 1 especial), telefone, data de nascimento, aceite de termos, registro no PEC |
 | Endereço | rótulo (Casa/Trabalho/Outro), rua, número, bairro, complemento, CEP, geolocalização, selecionado (bool) |
 | Loja | nome, grupo econômico, módulos ativos, horário da loja, horário do delivery, tempo de retirada/entrega, raio, frete grátis, distância |
 | Produto | id, sku, nome, fabricante, preço final, preço inicial, oferta, limitador de oferta, `requiresPrescriptionRetention` |
+| Oferta | produto, preço de oferta, duração, limitador de oferta, destaque (bool), status (ativada no CPF) |
 | Carrinho | itens[] (produto, qtd, origem oferta/normal), subtotal, frete, endereço/loja |
-| Cartão | bandeira, 4 últimos dígitos, token (cofre), titular, CPF |
-| Pedido | status, método (entrega/retirada), forma de pagamento, PIX (código, expiração) |
+| Cartão | bandeira, 4 últimos dígitos, token (cofre Cielo/Braspag), titular, CPF, apelido (opcional) |
+| Pedido | status (Fila, Em separação, Liberado, Concluído, Cancelado), método (entrega/retirada), forma de pagamento, PIX (código, expiração), data de criação |
+| Config. de pagamento (loja) | meios habilitados, MerchantID/MerchantKey (gateway), antifraude (on/off) |
 
 ## 7. Itens em aberto
 
 - `[EM TESTES]` **FR-063 (ECA-665)** — confirmação por CVV ao finalizar no app.
+- `[MIGRAÇÃO]` **Gateway/tokenização** migrando de **Cielo** (E-Commerce) para **Braspag** (FR-094, FR-109–FR-112). Confirmar quais lojas já operam no novo gateway.
+- `[CONFLITO RESOLVIDO]` **Vitrines da home** e **roteamento de loja**: prevalece a regra atual (FR-020/ECA-58 e FR-012/ECA-35); baseline anterior preservado nas notas da seção 5.2.
+- `[SEGURANÇA]` Credenciais dos handoffs de gateway/tokenização **não** versionadas no repositório (ver nota em 5.10).
 
 ## 8. Checklist de revisão
 
 - [x] Requisitos focam em **o quê/porquê**, não em implementação.
-- [x] Cada FR é verificável e rastreável a um ticket ECA.
+- [x] Cada FR tem origem sinalizada (ECA ou baseline) e é verificável.
 - [x] Cenários de usuário cobrem os fluxos principais.
 - [x] Conformidade regulatória (RDC 144) explicitada para controlados.
+- [x] Conflitos baseline × épicos resolvidos a favor da regra atual, com nota.
+- [x] Credenciais sensíveis mantidas fora da spec.
 - [ ] Validar FR-063 após conclusão dos testes do ECA-665.
+- [ ] Confirmar o estado da migração de gateway (Cielo → Braspag).

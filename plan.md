@@ -4,19 +4,19 @@
 |---|---|
 | **Feature** | `001-app-ecommerce` |
 | **Spec** | [`spec.md`](./spec.md) |
-| **Status** | Entregue |
+| **Status** | Em produção (baseline) + épicos 1–5 |
 | **Atualizado** | 2026-06 |
 
-> Descreve **como** os requisitos da spec foram realizados: contexto técnico, integrações, dependências de configuração e o sequenciamento por épico. Não substitui a documentação de arquitetura do time; serve de mapa entre requisitos e pontos de implementação.
+> Descreve **como** os requisitos da spec foram/são realizados: contexto técnico, integrações, dependências de configuração e o sequenciamento. Cobre o produto completo (baseline + épicos recentes). Não substitui a documentação de arquitetura do time; serve de mapa entre requisitos e pontos de implementação.
 
 ---
 
 ## 1. Contexto técnico
 
 - **Cliente:** aplicativo mobile (iOS e Android), com componentes do design system v1.
-- **Backend/API:** serviços `api-edelivery` (merchandising, carrinho/checkout, pedidos).
-- **Configuração de domínio:** **Portal Radar E-commerce** — fonte de verdade para catálogo, categorias, ofertas, fretes, horários (loja e delivery), tempos de retirada/entrega e formas de pagamento.
-- **Integrações externas:** Google Maps (geocoding/autocomplete + geolocalização), Braspag/Cielo (cofre/tokenização de cartões, PIX e crédito), serviço de push notifications.
+- **Backend/API:** serviços `api-edelivery` (merchandising, carrinho/checkout, pedidos, contas).
+- **Configuração de domínio:** **Portal Radar E-commerce / E-Delivery** — fonte de verdade para catálogo, categorias, ofertas, banners, fretes, horários (loja e delivery), tempos de retirada/entrega, formas de pagamento e antifraude.
+- **Integrações externas:** Google Maps (geocoding/autocomplete + geolocalização); **gateway de pagamento Braspag** (novo, apartado da integração E-Commerce Cielo) com cofre/tokenização, PIX e crédito; **antifraude Cybersource** (via Braspag); serviço de push notifications; base de clientes **PEC** da rede.
 - **Conformidade:** RDC 144 (ANVISA) para medicamentos com retenção de receita.
 
 ## 2. Pontos de integração
@@ -25,9 +25,13 @@
 |---|---|---|
 | Flag de retenção (detalhe) | `GET /mobile/merchandising/v2/stock/products/{productId}/{skuId}` | `medicationLabel.requiresPrescriptionRetention` (boolean). Suporta FR-001..FR-010. |
 | Flag de retenção (frete) | `GET /mobile/cart/shipping/strategies` | `shippingOptions[].requiresPrescriptionRetention`. Habilita regras de entrega/retirada. |
-| Endereçamento | Google Maps Places/Geocoding | Autocomplete (até 5), PIN e geocodificação reversa. FR-011..FR-016. |
-| Pagamento | Gateway Braspag/Cielo | Tokenização/cofre (FR-059/060), PIX 2h (FR-061), enriquecimento de CVV (FR-063). |
+| Endereçamento | Google Maps Places/Geocoding | Autocomplete (até 5), PIN e geocodificação reversa. FR-011..FR-016, FR-078. |
+| Pagamento (atual) | Gateway Braspag | Tokenização/cofre (FR-059/060, FR-091..094), PIX 2h (FR-061, FR-086..090), CVV (FR-063). |
+| Pagamento (legado) | E-Commerce Cielo | Integração anterior, em migração para o gateway Braspag (FR-109). |
+| Antifraude | Cybersource (via Braspag) | Chamada única no gateway; opcional por loja (FR-111/112). |
+| Contas | `api-edelivery` (contas) + PEC | Login por e-mail/CPF, reset por CPF, registro no PEC. FR-095..103. |
 | Notificações | Serviço de push | Disparo por transição de status. FR-024/025. |
+| Pedidos | `api-edelivery` (pedidos) | Status (Fila/Separação/Liberado/Concluído/Cancelado), fila pós-PIX. FR-089, FR-113..116. |
 
 ## 3. Dependências de configuração (Portal)
 
@@ -46,6 +50,9 @@ As regras abaixo são **dirigidas por dados** do Portal e devem refletir em carr
 - **Roteamento de loja:** prioridade fixa entrega(≤30km) → vendas → ofertas (FR-012); fallback para tela de indisponibilidade (FR-013).
 - **Segurança de pagamento:** dados de cartão não trafegam/armazenam em claro; apenas token + bandeira + 4 dígitos (FR-057/059); CVV usado apenas para enriquecer o payload da venda (FR-063).
 - **Conformidade ANVISA:** ausência total de comunicação promocional em controlados é requisito legal, não estético (FR-007/008).
+- **Segredos fora do repositório:** credenciais de gateway/tokenização (MerchantID, MerchantKey, ClientId, ClientSecret), IDs do Cybersource e regras de teste constam apenas nos handoffs do parceiro; no código, ficam em gerenciador de segredos / variáveis de ambiente, nunca versionadas (FR-110, seção 5.10 da spec).
+- **Baseline vs. épicos:** onde o comportamento pré-existente conflita com os épicos recentes, prevalece a regra atual; o baseline é preservado em notas para histórico (vitrines/ECA-58, roteamento/ECA-35, checkout/Épico 5).
+- **Migração de gateway:** Cielo (E-Commerce) → Braspag em andamento; manter compatibilidade durante a transição.
 
 ## 5. Fases de implementação (mapeadas aos épicos)
 
@@ -54,6 +61,8 @@ As regras abaixo são **dirigidas por dados** do Portal e devem refletir em carr
 3. **Fase 3 — Notificações (Épico 3):** push por transição de status. → FR-024/025.
 4. **Fase 4 — Endereços (Épico 4):** gestão, adicionar/editar/excluir. → FR-026..FR-030.
 5. **Fase 5 — Checkout (Épico 5):** carrinho, entrega/retirada, troca de loja, pagamento, PIX, cartões, CVV. → FR-031..FR-063.
+
+> **Baseline (pré-épicos):** acesso/login (FR-095..103), ofertas (FR-104..108), gateway e antifraude (FR-109..112), histórico de pedidos (FR-113..116) e complementos de homepage, troca de loja, PIX e tokenização (FR-064..094) descrevem comportamento já em produção, anterior aos épicos 1–5.
 
 ## 6. Estratégia de verificação
 
