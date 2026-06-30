@@ -9,7 +9,11 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git config *)",
-      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\\\\spec-kit-radar-ecommerce-main\" diff --stat)"
+      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\\\\spec-kit-radar-ecommerce-main\" diff --stat)",
+      "Bash(git -C \"C:\\\\Users\\\\daniel.costa_farmarc\\\\Desktop\\\\spec-kit-radar-ecommerce-main\" remote -v)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git pull *)"
     ]
   }
 }
