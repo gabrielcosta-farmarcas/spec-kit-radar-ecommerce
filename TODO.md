@@ -33,3 +33,4 @@
 - [x] Configurar `.claude/settings.json`
 - [x] Renomear repositório para `spec-kit-radar-ecommerce`
 - [x] Configurar SSH no GitHub
+- [x] Adicionar roadmap Q3 2026 do App em `assets/roadmap/`

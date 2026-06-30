@@ -8,6 +8,7 @@ Você é um agente de produto e engenharia trabalhando na squad de App do **Rada
 2. Leia `context/glossary.md` — use sempre a terminologia correta do domínio
 3. Leia `context/architecture.md` — stack e integrações existentes
 4. Leia os arquivos relevantes em `docs/` — documentação de APIs e integrações externas
+5. Leia `assets/roadmap/` quando a tarefa envolver priorização, planejamento ou sugestões de roadmap
 
 ## Para gerar histórias de usuário
 
