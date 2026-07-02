@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>[#ECA-633] PBM - Envio da NF</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://farmarcas.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <b><a id="parent_issue_summary" href="https://farmarcas.atlassian.net/browse/ECA-28">Integração PBM</a></b>
+                <span style="font-size: 9px">(<a id="parent_issue_key" href="https://farmarcas.atlassian.net/browse/ECA-28">ECA-28</a>)</span>
+                <h3 class="formtitle"><img src="https://farmarcas.atlassian.net/images/icons/link_out_bot.gif" width="16" height="16" />
+                        [ECA-633]&nbsp;<a href="https://farmarcas.atlassian.net/browse/ECA-633">PBM - Envio da NF</a>
+            <span class="subText">
+               Criado: 16/jun/26                   &nbsp;Atualizado: 01/jul/26
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Estado:</b></td>
+        <td width="80%">PRONTO PARA REFINAMENTO</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://farmarcas.atlassian.net/secure/BrowseProject.jspa?id=11394">SQ - ECOMMERCE APP</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Afeta as versões:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões de correção:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+            <td width="20%"><b>Principal:</b></td>
+        <td width="80%"><a href="https://farmarcas.atlassian.net/browse/ECA-28">Integração PBM</a></td>
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            História
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Low
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Criador:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                id="word_reporter_712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                href="https://farmarcas.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A767cf60e-6e7e-4066-87e7-ebf52083479a">
+                    daniel.costa
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                id="word_assignee_712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                href="https://farmarcas.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A767cf60e-6e7e-4066-87e7-ebf52083479a">
+                    daniel.costa
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não Resolvido
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Etiquetas:</b>
+        </td>
+        <td id="labels-79785-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Tempo Restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo Gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo Estimado:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+    
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10020-79785-value" class="value" bgcolor="#ffffff" width="80%"></td>
+            </tr>
+            </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p><font color="#4c9aff"><b>User story</b></font></p>
+
+<p><b>Como</b> usuário <b>gestor da farmácia</b> que gerencia o fluxo de atendimento do PBM <b>quero</b> garantir o processo de finalização da venda no provedor para garantir o ressarcimento e a reposição do produto</p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>Overview</b></font></p>
+
+<p>O objetivo dessa task é enviar a NF para o provedor, após a conclusão do pedido, para efetivar a transação PBM</p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>O que deve ser feito?</b></font></p>
+
+<ul>
+	<li>Conclusão/Efetivação da venda no provedor</li>
+	<li>Envio da NF do pedido para o provedor</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Regras de Negócio</b></font></p>
+
+<ul>
+	<li>O disparo da API de Confirmação (<tt>/api/transaction/confirma</tt>) deve ser obrigatoriamente condicionado ao sucesso da emissão da NF. Assim que o pedido for concluído no ERP da loja e a NF enviada, o app deve concluir a transação no provedor.</li>
+	<li>O backend deve resgatar e enviar o <tt>transactionCode</tt> (NSU Central) retornado na resposta da autorização da venda</li>
+	<li>O código da administradora (<tt>control<span class="error">&#91;1&#93;</span>.industryId</tt>) deve seguir fixado em <b>999</b></li>
+	<li>O campo <tt>accessKey</tt> é de envio obrigatório e deve conter a chave de acesso de 44 dígitos gerada pela SEFAZ.</li>
+</ul>
+
+
+<div class="panel" style="background-color: #fffae6;border-width: 1px;"><div class="panelContent" style="background-color: #fffae6;">
+<p>A regra acima de aplica para NFE e NFC. Se o tipo for NCF, o preenchimento da <tt>accessKey</tt> passa a ser opcional.</p>
+</div></div>
+
+<ul>
+	<li>O campo <tt>operationId</tt> deve ser preenchido obrigatoriamente com o número sequencial do cupom fiscal ou o número da Nota Fiscal emitida, sem pontos ou traços.digo da administradora</li>
+	<li>A resposta positiva do provedor retornará as confirmações dos itens autorizados e valores finais consolidados. O aplicativo deve salvar esses logs vinculados ao pedido para histórico da venda e do cliente</li>
+	<li>Se o endpoint de confirmação falhar por instabilidade do provedor (Erros 500, 503 ou Timeouts), o app <b>NÃO</b> pode cancelar a venda para o cliente (já que a NF já foi emitida e o pagamento aprovado). O sistema deve reter a requisição em uma fila de mensageria e realizar tentativas automáticas até que o provedor processe o envio.</li>
+	<li>Se o provedor retornar um erro na hora de confirmar a nota (objeto <tt>process<span class="error">&#91;1&#93;</span>.error<span class="error">&#91;n&#93;</span></tt>), o app deve gerar um <b>alerta interno urgente</b> para o time de tecnologia.</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Critérios de aceite</b></font></p>
+
+<ul>
+	<li>O sistema identifica o recebimento da NF enviada pelo ERP</li>
+	<li>O sistema compartilha e vincula a NF do pedido com o provedor de PBM e o pedido referência</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Link Figma</b></font></p>
+
+<p><a href="https://www.figma.com/design/7Pi4v28TLqe0YhcqqKAEjR/App-%C2%B7-E-commerce?node-id=1986-85&amp;p=f&amp;t=XweTn7FYzuYibGUG-0" title="smart-link" class="external-link" rel="nofollow noreferrer">https://www.figma.com/design/7Pi4v28TLqe0YhcqqKAEjR/App-%C2%B7-E-commerce?node-id=1986-85&amp;p=f&amp;t=XweTn7FYzuYibGUG-0</a> </p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>URL’s e Credenciais</b></font></p>
+
+<p>Credencial Farmarcas (99999994000916)</p>
+
+<ul>
+	<li>Client ID: af43e159-815f-4d77-9cd2-54fd2f62fdb6</li>
+	<li>Client Secret: [REDACTED]</li>
+</ul>
+
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<td class='confluenceTd'><b>SERVIÇO</b> </td>
+<td class='confluenceTd'><b>URL</b> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>TOKEN </td>
+<td class='confluenceTd'><a href="https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Varejo_PRE/oauth2/v2.0/token" class="external-link" rel="nofollow noreferrer">https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Varejo_PRE/oauth2/v2.0/token</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>TOKEN - Link campo Scope </td>
+<td class='confluenceTd'> <br/>
+<a href="https://interplayersdevb2c.onmicrosoft.com/services/varejo-api-pre/.default" class="external-link" rel="nofollow noreferrer">https://interplayersdevb2c.onmicrosoft.com/services/varejo-api-pre/.default</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>LOAD TABLES </td>
+<td class='confluenceTd'><a href="https://api-mng-dev.interplayers.com.br/attendance-pre/v1/integration/loadTablesMarketplace?clientId=" class="external-link" rel="nofollow noreferrer"><ins>https://api-mng-dev.interplayers.com.br/attendance-pre/v1/integration/loadTablesMarketplace?clientId=</ins></a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONSULTA PRODUTO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultaproduto" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultaproduto</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONSULTA DESCONTO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultadesconto" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v3/consultadesconto</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CARRINHO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/carrinho" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/carrinho</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>EFETIVA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/efetiva" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/efetiva</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONFIRMA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/confirma" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/confirma</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>ANULA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/anula" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/anula</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CANCELA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Cancela" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Cancela</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>EXTRATO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Extrato" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Extrato</a> </td>
+</tr>
+</tbody></table>
+</div>
+
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Gerado às Thu Jul 02 14:18:14 UTC 2026 por daniel.costa usando o JIRA 1001.0.0-SNAPSHOT#100292-rev:f152b838bb945118c071b297741ecc5e36093b62.
+
+</body>
+</html>

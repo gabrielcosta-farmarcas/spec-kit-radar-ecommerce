@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>[#ECA-632] PBM - Efetivação da compra</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://farmarcas.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <b><a id="parent_issue_summary" href="https://farmarcas.atlassian.net/browse/ECA-28">Integração PBM</a></b>
+                <span style="font-size: 9px">(<a id="parent_issue_key" href="https://farmarcas.atlassian.net/browse/ECA-28">ECA-28</a>)</span>
+                <h3 class="formtitle"><img src="https://farmarcas.atlassian.net/images/icons/link_out_bot.gif" width="16" height="16" />
+                        [ECA-632]&nbsp;<a href="https://farmarcas.atlassian.net/browse/ECA-632">PBM - Efetivação da compra</a>
+            <span class="subText">
+               Criado: 16/jun/26                   &nbsp;Atualizado: 01/jul/26
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Estado:</b></td>
+        <td width="80%">PRONTO PARA REFINAMENTO</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://farmarcas.atlassian.net/secure/BrowseProject.jspa?id=11394">SQ - ECOMMERCE APP</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Afeta as versões:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões de correção:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+            <td width="20%"><b>Principal:</b></td>
+        <td width="80%"><a href="https://farmarcas.atlassian.net/browse/ECA-28">Integração PBM</a></td>
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            História
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Low
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Criador:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                id="word_reporter_712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                href="https://farmarcas.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A767cf60e-6e7e-4066-87e7-ebf52083479a">
+                    daniel.costa
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                id="word_assignee_712020:767cf60e-6e7e-4066-87e7-ebf52083479a"
+                href="https://farmarcas.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A767cf60e-6e7e-4066-87e7-ebf52083479a">
+                    daniel.costa
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não Resolvido
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Etiquetas:</b>
+        </td>
+        <td id="labels-79784-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Tempo Restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo Gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo Estimado:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+    
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10020-79784-value" class="value" bgcolor="#ffffff" width="80%"></td>
+            </tr>
+            </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p><font color="#4c9aff"><b>User story</b></font></p>
+
+<p><b>Como</b> usuário <b>consumidor</b> que tem acesso ao aplicativo <b>quero</b> concluir a minha compra utilizando o preço laboratório de um medicamento</p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>Overview</b></font></p>
+
+<p>O objetivo dessa task é permitir que o usuário conclua a sua jornada de compra comprando um produto com as condições de preço do programa de PBM</p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>O que deve ser feito?</b></font></p>
+
+<ul>
+	<li>Permitir que o consumidor finalize uma compra de um produto PBM no aplicativo</li>
+	<li>Autorizar a venda no provedor</li>
+	<li>Realizar a reserva das quantidades no CPF do consumidor dentro do programa</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Regras de Negócio</b></font></p>
+
+<ul>
+	<li>O código da administradora na plataforma deve ser fixado obrigatoriamente com o valor 999.</li>
+	<li>Para novas tentativas ou novos atendimentos iniciados no checkout, o campo deve ser enviado preenchido com zeros.</li>
+	<li>O identificador do consumidor deve ser limpo pelo backend, removendo qualquer tipo de pontuação, pontos ou traços antes do envio.</li>
+	<li>O checkout do e-commerce deve enviar todos os produtos da cesta (com ou sem PBM) e todas as administradoras envolvidas em uma única transação de venda unificada.</li>
+	<li>Para cada produto da lista (<tt>product<span class="error">&#91;30&#93;</span></tt>), o sistema deve enviar o preço bruto (<tt>listPrice</tt>) e o preço líquido de venda praticado pelo e-commerce naquele momento (<tt>netPrice</tt>), ambos sem pontos ou traços.Para cada produto da lista, o sistema deve enviar o preço bruto e o preço líquido de venda praticado pelo e-commerce naquele momento, sem pontos ou traços.</li>
+	<li><font color="#ff5630">O backend deve setar o valor padrão como </font><tt>B</tt><font color="#ff5630"> (Bruto) para que o programa calcule o desconto com base no preço cheio do medicamento. Caso a estratégia comercial mude para calcular desconto sobre desconto (com base no preço já promocionado da loja), o parâmetro enviado deve ser alterado para </font><tt>L</tt><font color="#ff5630"> (Líquido).</font></li>
+	<li>O aplicativo deve checar o campo <tt>product<span class="error">&#91;n&#93;</span>.discountAdditionalMultiplied</tt> para obter o valor monetário total do desconto concedido pelo laboratório já multiplicado pela quantidade de itens aprovados</li>
+</ul>
+
+
+<div class="panel" style="background-color: #fffae6;border-width: 1px;"><div class="panelContent" style="background-color: #fffae6;">
+<p>Se optarmos por calcular o desconto no aplicativo, temos essa opção utilizando o campo discountValue. Nessa estratégia, o provedor vai passar o valor total do desconto e o aplicativo faria o cálculo no checkout</p>
+</div></div>
+
+<ul>
+	<li>Sempre que o preço loja do produto for superior à condição do programa de PBM, mesmo que o cliente selecione o preço loja no aplicativo, a transação precisa ser autorizada no provedor de PBM</li>
+	<li>Se o desconto promocional nativo do aplicativo for superior ao desconto aprovado pelo laboratório, o HUB retornará o campo de desconto adicional zerado (<tt>discountValue = 0</tt> ou <tt>discountAdditionalMultiplied = 0</tt>).</li>
+	<li>No cenário onde o preço da loja é superior ao preço do PBM, o app deve manter o seu preço promocional para o cliente, mas a transação <b>deve continuar tramitando por dentro do PBM</b> para fins de auditoria e garantir o ressarcimento do valor autorizado pela indústria junto ao laboratório.</li>
+</ul>
+
+
+<div class="panel" style="background-color: #fffae6;border-width: 1px;"><div class="panelContent" style="background-color: #fffae6;">
+<p>Nesse caso, o associado vai receber o pagamento do valor negociado com a indústria e provedor e arcar com o “prejuízo” somente do valor adicional de desconto aplicado intencionalmente no produto</p>
+</div></div>
+
+<ul>
+	<li>O fechamento do pedido no gateway de pagamento do e-commerce deve utilizar o valor contido no campo de retorno <tt>payment<span class="error">&#91;30&#93;</span>.totalCheckoutValue</tt> (ou o correspondente por item em <tt>unitNetValue</tt>), que representa exatamente o valor líquido final real a ser pago pelo consumidor no caixa.</li>
+	<li><font color="#ff5630">O sistema deve estar preparado para ler o atributo </font><tt>pointing</tt><font color="#ff5630">. Se o produto retornar pontos em vez de desconto monetário, a interface deve exibir a pontuação de fidelidade adquirida pelo portador, tratando os casos de remédios que operam exclusivamente por acúmulo de pontos.</font></li>
+	<li>Quando o consumidor enviar o pedido no aplicativo, o app deve autorizar a transação realizando a reserva das quantidades para esse cliente dentro do provedor.</li>
+	<li>Em caso de falha na chamada, o backend do e-commerce deve mapear se o erro ocorreu na camada de conversão (<tt>conversion</tt>), validação (<tt>validation</tt>) ou processamento (<tt>process</tt>). O código único de suporte (<tt>returnCode</tt>) deve ser guardado nos logs internos.</li>
+	<li>O aplicativo deve guardar no pedido os dados retornados de quantidades autorizadas (<tt>authorizedQuantity</tt>) e CNPJ das indústrias (<tt>industryCompanyCode</tt>).</li>
+	<li>O consumidor deve conseguir efetivar a compra de produtos que fazem parte de diferentes programas de PBM</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Critérios de aceite</b></font></p>
+
+<ul>
+	<li>Consigo finalizar uma compra no aplicativo comprando o produto com o desconto do PBM</li>
+	<li>Consigo finalizar uma compra no aplicativo comprando dois produtos de programas diferentes, dentro da mesma cesta, com o desconto PBM</li>
+</ul>
+
+
+<hr />
+
+<p><font color="#4c9aff"><b>Link Figma</b></font></p>
+
+<p><a href="https://www.figma.com/design/7Pi4v28TLqe0YhcqqKAEjR/App-%C2%B7-E-commerce?node-id=1986-85&amp;p=f&amp;t=XweTn7FYzuYibGUG-0" title="smart-link" class="external-link" rel="nofollow noreferrer">https://www.figma.com/design/7Pi4v28TLqe0YhcqqKAEjR/App-%C2%B7-E-commerce?node-id=1986-85&amp;p=f&amp;t=XweTn7FYzuYibGUG-0</a> </p>
+
+<hr />
+
+<p><font color="#4c9aff"><b>URL’s e Credenciais</b></font></p>
+
+<p>Credencial Farmarcas (99999994000916)</p>
+
+<ul>
+	<li>Client ID: af43e159-815f-4d77-9cd2-54fd2f62fdb6</li>
+	<li>Client Secret: [REDACTED]</li>
+</ul>
+
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<td class='confluenceTd'><b>SERVIÇO</b> </td>
+<td class='confluenceTd'><b>URL</b> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>TOKEN </td>
+<td class='confluenceTd'><a href="https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Varejo_PRE/oauth2/v2.0/token" class="external-link" rel="nofollow noreferrer">https://interplayersdevb2c.b2clogin.com/interplayersdevb2c.onmicrosoft.com/B2C_1_Varejo_PRE/oauth2/v2.0/token</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>TOKEN - Link campo Scope </td>
+<td class='confluenceTd'> <br/>
+<a href="https://interplayersdevb2c.onmicrosoft.com/services/varejo-api-pre/.default" class="external-link" rel="nofollow noreferrer">https://interplayersdevb2c.onmicrosoft.com/services/varejo-api-pre/.default</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>LOAD TABLES </td>
+<td class='confluenceTd'><a href="https://api-mng-dev.interplayers.com.br/attendance-pre/v1/integration/loadTablesMarketplace?clientId=" class="external-link" rel="nofollow noreferrer"><ins>https://api-mng-dev.interplayers.com.br/attendance-pre/v1/integration/loadTablesMarketplace?clientId=</ins></a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONSULTA PRODUTO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultaproduto" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultaproduto</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONSULTA DESCONTO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v2/consultadesconto" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/v3/consultadesconto</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CARRINHO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/carrinho" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/carrinho</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>EFETIVA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/efetiva" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/efetiva</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CONFIRMA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/confirma" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/confirma</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>ANULA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/anula" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/anula</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>CANCELA </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Cancela" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Cancela</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>EXTRATO </td>
+<td class='confluenceTd'><a href="https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Extrato" class="external-link" rel="nofollow noreferrer">https://idp-api-gtw.azure-api.net/attendance-pre/v1/transaction/Extrato</a> </td>
+</tr>
+</tbody></table>
+</div>
+
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Gerado às Thu Jul 02 14:18:05 UTC 2026 por daniel.costa usando o JIRA 1001.0.0-SNAPSHOT#100292-rev:f152b838bb945118c071b297741ecc5e36093b62.
+
+</body>
+</html>
