@@ -24,7 +24,7 @@
 | **Deeplink** | Tecnologia usada no novo checkout para receber dados necessários à precificação. |
 | **OMS** | Order Management System. Gerencia o ciclo de vida dos pedidos após criação. |
 | **Recompra** | Funcionalidade que permite ao consumidor repetir um pedido anterior com um clique. |
-| **GE** | Geolocalização. Usado no contexto de conflito entre GE do app e experiência do consumidor. |
+| **GE** | Grupo Econômico. Grupo de uma ou mais lojas do mesmo empresário. |
 | **Controlados** | Medicamentos que exigem receita médica. Compra disponível pelo app com retirada obrigatória na loja. |
 | **Maxi Popular** | [TODO: descrever o que é o App Maxi Popular no contexto do Radar] |
 
